@@ -24,6 +24,8 @@ export interface MessageProps<TMessage extends IMessage> {
 }
 export default class Message<TMessage extends IMessage = IMessage> extends React.Component<MessageProps<TMessage>> {
     static defaultProps: {
+        blur:boolean,
+        avoidBlur:string,
         renderAvatar: undefined;
         renderBubble: null;
         renderDay: null;
@@ -39,6 +41,8 @@ export default class Message<TMessage extends IMessage = IMessage> extends React
         shouldUpdateMessage: undefined;
     };
     static propTypes: {
+        blur:PropTypes.Requireable<boolean>;
+        avoidBlur:PropTypes.Requireable<string>;
         renderAvatar: PropTypes.Requireable<(...args: any[]) => any>;
         showUserAvatar: PropTypes.Requireable<boolean>;
         renderBubble: PropTypes.Requireable<(...args: any[]) => any>;

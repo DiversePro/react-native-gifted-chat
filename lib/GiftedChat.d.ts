@@ -116,6 +116,8 @@ declare class GiftedChat<TMessage extends IMessage = IMessage> extends React.Com
         getLocale: PropTypes.Requireable<(...args: any[]) => any>;
     };
     static defaultProps: {
+        blur:boolean;
+        avoidBlur:string;
         messages: never[];
         messagesContainerStyle: undefined;
         text: undefined;
@@ -181,6 +183,8 @@ declare class GiftedChat<TMessage extends IMessage = IMessage> extends React.Com
     static propTypes: {
         messages: PropTypes.Requireable<(object | null | undefined)[]>;
         messagesContainerStyle: PropTypes.Requireable<number | boolean | object>;
+        blur:PropTypes.Requireable<boolean>;
+        avoidBlur:PropTypes.Requireable<string>;
         text: PropTypes.Requireable<string>;
         initialText: PropTypes.Requireable<string>;
         placeholder: PropTypes.Requireable<string>;

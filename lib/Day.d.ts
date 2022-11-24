@@ -17,6 +17,8 @@ export default class Day<TMessage extends IMessage = IMessage> extends PureCompo
         getLocale: PropTypes.Requireable<(...args: any[]) => any>;
     };
     static defaultProps: {
+        blur:boolean;
+        avoidBlur:string;
         currentMessage: {
             createdAt: null;
         };
@@ -28,6 +30,8 @@ export default class Day<TMessage extends IMessage = IMessage> extends PureCompo
         dateFormat: string;
     };
     static propTypes: {
+        blur:PropTypes.Requireable<boolean>;
+        avoidBlur:PropTypes.Requireable<string>;
         currentMessage: PropTypes.Requireable<object>;
         previousMessage: PropTypes.Requireable<object>;
         nextMessage: PropTypes.Requireable<object>;

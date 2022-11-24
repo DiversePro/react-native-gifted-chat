@@ -49,6 +49,8 @@ export default class Bubble<TMessage extends IMessage = IMessage> extends React.
         actionSheet: PropTypes.Requireable<(...args: any[]) => any>;
     };
     static defaultProps: {
+        blur:boolean;
+        avoidBlur:string;
         touchableProps: {};
         onLongPress: null;
         renderMessageImage: null;
@@ -79,6 +81,8 @@ export default class Bubble<TMessage extends IMessage = IMessage> extends React.
         containerToPreviousStyle: {};
     };
     static propTypes: {
+        blur:PropTypes.Requireable<boolean>;
+        avoidBlur:PropTypes.Requireable<string>;
         user: PropTypes.Validator<object>;
         touchableProps: PropTypes.Requireable<object>;
         renderUsernamePosition: PropTypes.Requireable<string>;
