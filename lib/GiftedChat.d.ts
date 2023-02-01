@@ -82,6 +82,7 @@ export interface GiftedChatProps<TMessage extends IMessage = IMessage> {
     renderMessage?(message: Message<TMessage>['props']): React.ReactNode;
     renderMessageText?(messageText: MessageText<TMessage>['props']): React.ReactNode;
     renderMessageImage?(props: MessageImage<TMessage>['props']): React.ReactNode;
+    renderMessageVideo?(props:any): any;
     renderCustomView?(props: Bubble<TMessage>['props']): React.ReactNode;
     renderDay?(props: Day<TMessage>['props']): React.ReactNode;
     renderTime?(props: Time<TMessage>['props']): React.ReactNode;
@@ -145,6 +146,7 @@ declare class GiftedChat<TMessage extends IMessage = IMessage> extends React.Com
         renderSystemMessage: null;
         onLongPress: null;
         renderMessage: null;
+        renderMessageVideo:null;
         renderMessageText: null;
         renderMessageImage: null;
         isReplyActive:boolean;

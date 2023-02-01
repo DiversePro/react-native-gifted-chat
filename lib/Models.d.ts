@@ -23,9 +23,9 @@ export interface LeftRightStyle<T> {
 }
 declare type renderFunction = (x: any) => JSX.Element;
 export interface User {
-    _id: string | number;
+    id: string | number;
     name?: string;
-    avatar?: string | renderFunction;
+    pictureUrl?: string | renderFunction;
 }
 export interface Reply {
     title: string;
