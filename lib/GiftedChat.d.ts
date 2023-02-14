@@ -120,6 +120,7 @@ declare class GiftedChat<TMessage extends IMessage = IMessage> extends React.Com
         blur:boolean;
         setIsKeyboardOpen:any;
         avoidBlur:string;
+        extraMargin: number;
         messages: never[];
         messagesContainerStyle: undefined;
         text: undefined;
@@ -189,6 +190,7 @@ declare class GiftedChat<TMessage extends IMessage = IMessage> extends React.Com
         blur:PropTypes.Requireable<boolean>;
         setIsKeyboardOpen:PropTypes.Requireable<any>;
         avoidBlur:PropTypes.Requireable<string>;
+        extraMargin:PropTypes.Requireable<number>;
         text: PropTypes.Requireable<string>;
         initialText: PropTypes.Requireable<string>;
         placeholder: PropTypes.Requireable<string>;

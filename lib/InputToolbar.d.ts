@@ -9,6 +9,7 @@ export interface InputToolbarProps {
         [key: string]: any;
     };
     optionTintColor?: string;
+    extraMargin?: number;
     containerStyle?: StyleProp<ViewStyle>;
     primaryStyle?: StyleProp<ViewStyle>;
     accessoryStyle?: StyleProp<ViewStyle>;
@@ -30,7 +31,8 @@ export default class InputToolbar extends React.Component<InputToolbarProps, {
         primaryStyle: {};
         accessoryStyle: {};
         onPressActionButton: () => void;
-        position:"absolute"
+        position:"absolute";
+        extraMargin:0
     };
     static propTypes: {
         renderAccessory: PropTypes.Requireable<(...args: any[]) => any>;
@@ -42,6 +44,7 @@ export default class InputToolbar extends React.Component<InputToolbarProps, {
         primaryStyle: PropTypes.Requireable<number | boolean | object>;
         accessoryStyle: PropTypes.Requireable<number | boolean | object>;
         position:PropTypes.Requireable<string>;
+        extraMargin:PropTypes.Requireable<number>;
     };
     state: {
        

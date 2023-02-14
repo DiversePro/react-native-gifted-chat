@@ -37,6 +37,7 @@ export default class MessageContainer<TMessage extends IMessage = IMessage> exte
         user: {};
         blur:boolean;
         avoidBlur:string;
+        extraMargin:number;
         isTyping: boolean;
         renderChatEmpty: null;
         renderFooter: null;
@@ -60,6 +61,7 @@ export default class MessageContainer<TMessage extends IMessage = IMessage> exte
     static propTypes: {
         blur:PropTypes.Requireable<boolean>;
         avoidBlur:PropTypes.Requireable<string>;
+        extraMargin:PropTypes.Requireable<number>;
         messages: PropTypes.Requireable<(object | null | undefined)[]>;
         isTyping: PropTypes.Requireable<boolean>;
         user: PropTypes.Requireable<object>;
