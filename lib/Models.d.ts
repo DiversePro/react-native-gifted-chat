@@ -25,7 +25,7 @@ declare type renderFunction = (x: any) => JSX.Element;
 export interface User {
     id: string | number;
     name?: string;
-    pictureUrl?: string | renderFunction;
+    avatar?: string | renderFunction;
 }
 export interface Reply {
     title: string;

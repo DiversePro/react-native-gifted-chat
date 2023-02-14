@@ -82,7 +82,7 @@ export interface GiftedChatProps<TMessage extends IMessage = IMessage> {
     renderMessage?(message: Message<TMessage>['props']): React.ReactNode;
     renderMessageText?(messageText: MessageText<TMessage>['props']): React.ReactNode;
     renderMessageImage?(props: MessageImage<TMessage>['props']): React.ReactNode;
-    renderMessageVideo?(props:any): any;
+    renderMessageVideo?(props: MessageImage<TMessage>['props']): React.ReactNode;
     renderCustomView?(props: Bubble<TMessage>['props']): React.ReactNode;
     renderDay?(props: Day<TMessage>['props']): React.ReactNode;
     renderTime?(props: Time<TMessage>['props']): React.ReactNode;
@@ -118,6 +118,7 @@ declare class GiftedChat<TMessage extends IMessage = IMessage> extends React.Com
     };
     static defaultProps: {
         blur:boolean;
+        setIsKeyboardOpen:any;
         avoidBlur:string;
         messages: never[];
         messagesContainerStyle: undefined;
@@ -146,9 +147,9 @@ declare class GiftedChat<TMessage extends IMessage = IMessage> extends React.Com
         renderSystemMessage: null;
         onLongPress: null;
         renderMessage: null;
-        renderMessageVideo:null;
         renderMessageText: null;
         renderMessageImage: null;
+        renderMessageVideo: null;
         isReplyActive:boolean;
         imageProps: {};
         videoProps: {};
@@ -186,6 +187,7 @@ declare class GiftedChat<TMessage extends IMessage = IMessage> extends React.Com
         messages: PropTypes.Requireable<(object | null | undefined)[]>;
         messagesContainerStyle: PropTypes.Requireable<number | boolean | object>;
         blur:PropTypes.Requireable<boolean>;
+        setIsKeyboardOpen:PropTypes.Requireable<any>;
         avoidBlur:PropTypes.Requireable<string>;
         text: PropTypes.Requireable<string>;
         initialText: PropTypes.Requireable<string>;
@@ -218,6 +220,7 @@ declare class GiftedChat<TMessage extends IMessage = IMessage> extends React.Com
         renderMessage: PropTypes.Requireable<(...args: any[]) => any>;
         renderMessageText: PropTypes.Requireable<(...args: any[]) => any>;
         renderMessageImage: PropTypes.Requireable<(...args: any[]) => any>;
+        renderMessageVideo: PropTypes.Requireable<(...args: any[]) => any>;
         imageProps: PropTypes.Requireable<object>;
         videoProps: PropTypes.Requireable<object>;
         audioProps: PropTypes.Requireable<object>;
