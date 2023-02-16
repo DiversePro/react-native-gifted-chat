@@ -24,6 +24,8 @@ export interface MessageContainerProps<TMessage extends IMessage> {
     renderLoadEarlier?(props: LoadEarlier['props']): React.ReactNode;
     scrollToBottomComponent?(): React.ReactNode;
     onLoadEarlier?(): void;
+    setScrollPosition?(offset:number): void;
+    scrolling: boolean;
     onQuickReply?(replies: Reply[]): void;
     infiniteScroll?: boolean;
     isLoadingEarlier?: boolean;
@@ -43,6 +45,8 @@ export default class MessageContainer<TMessage extends IMessage = IMessage> exte
         renderFooter: null;
         renderMessage: null;
         onLoadEarlier: () => void;
+        setScrollPosition:()=> void;
+        scrolling:boolean;
         onQuickReply: () => void;
         inverted: boolean;
         loadEarlier: boolean;
@@ -70,6 +74,8 @@ export default class MessageContainer<TMessage extends IMessage = IMessage> exte
         renderMessage: PropTypes.Requireable<(...args: any[]) => any>;
         renderLoadEarlier: PropTypes.Requireable<(...args: any[]) => any>;
         onLoadEarlier: PropTypes.Requireable<(...args: any[]) => any>;
+        setScrollPosition:PropTypes.Requireable<(...args: any[]) => any>;
+        scrolling: PropTypes.Requireable<boolean>;
         listViewProps: PropTypes.Requireable<object>;
         isReplyActive:PropTypes.Requireable<boolean>;
         inverted: PropTypes.Requireable<boolean>;

@@ -73,6 +73,9 @@ export interface GiftedChatProps<TMessage extends IMessage = IMessage> {
     messageIdGenerator?(message?: TMessage): string;
     onSend?(messages: TMessage[]): void;
     onLoadEarlier?(): void;
+    scrollToMessage?(offset:number): void;
+    setScrollPosition?(offset:number): void;
+    scrolling?: boolean;
     renderLoading?(): React.ReactNode;
     renderLoadEarlier?(props: LoadEarlier['props']): React.ReactNode;
     renderAvatar?(props: Avatar<TMessage>['props']): React.ReactNode;
@@ -118,6 +121,8 @@ declare class GiftedChat<TMessage extends IMessage = IMessage> extends React.Com
     };
     static defaultProps: {
         blur:boolean;
+        searchedWord: string;
+        search: boolean;
         setIsKeyboardOpen:any;
         avoidBlur:string;
         extraMargin: number;
@@ -132,8 +137,13 @@ declare class GiftedChat<TMessage extends IMessage = IMessage> extends React.Com
         locale: null;
         timeFormat: string;
         dateFormat: string;
+        scrollToMessageRef:any;
         loadEarlier: boolean;
         onLoadEarlier: () => void;
+        scrollToMessage:()=> void;
+        scrollToMessageId:string;
+        setScrollPosition:()=>void;
+        scrolling:boolean;
         isLoadingEarlier: boolean;
         renderLoading: null;
         renderLoadEarlier: null;
@@ -188,6 +198,8 @@ declare class GiftedChat<TMessage extends IMessage = IMessage> extends React.Com
         messages: PropTypes.Requireable<(object | null | undefined)[]>;
         messagesContainerStyle: PropTypes.Requireable<number | boolean | object>;
         blur:PropTypes.Requireable<boolean>;
+        searchedWord:PropTypes.Requireable<string>;
+        search:PropTypes.Requireable<boolean>;
         setIsKeyboardOpen:PropTypes.Requireable<any>;
         avoidBlur:PropTypes.Requireable<string>;
         extraMargin:PropTypes.Requireable<number>;
@@ -205,6 +217,11 @@ declare class GiftedChat<TMessage extends IMessage = IMessage> extends React.Com
         isKeyboardInternallyHandled: PropTypes.Requireable<boolean>;
         loadEarlier: PropTypes.Requireable<boolean>;
         onLoadEarlier: PropTypes.Requireable<(...args: any[]) => any>;
+        scrollToMessage:PropTypes.Requireable<(...args: any[]) => any>;
+        setScrollPosition:PropTypes.Requireable<(...args: any[]) => any>;
+        scrolling: PropTypes.Requireable<boolean>;
+        scrollToMessageId: PropTypes.Requireable<string>;
+        scrollToMessageRef:PropTypes.Requireable<any>;
         isLoadingEarlier: PropTypes.Requireable<boolean>;
         renderLoading: PropTypes.Requireable<(...args: any[]) => any>;
         renderLoadEarlier: PropTypes.Requireable<(...args: any[]) => any>;

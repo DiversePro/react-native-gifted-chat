@@ -29,6 +29,9 @@ export default class Message<TMessage extends IMessage = IMessage> extends React
         renderAvatar: undefined;
         renderBubble: null;
         renderDay: null;
+        scrollToMessageId:null,
+        scrollToMessageRef:null,
+        scrollToMessage:null,
         renderSystemMessage: null;
         position: string;
         currentMessage: {};
@@ -39,9 +42,14 @@ export default class Message<TMessage extends IMessage = IMessage> extends React
         showUserAvatar: boolean;
         inverted: boolean;
         shouldUpdateMessage: undefined;
+        scrollToMessageId: "";
+        scrollToMessageRef:null;
     };
     static propTypes: {
         blur:PropTypes.Requireable<boolean>;
+        scrollToMessageId:PropTypes.Requireable<string>;
+        scrollToMessageRef:PropTypes.Requireable<any>;
+        scrollToMessage:PropTypes.Requireable<any>;
         avoidBlur:PropTypes.Requireable<string>;
         renderAvatar: PropTypes.Requireable<(...args: any[]) => any>;
         showUserAvatar: PropTypes.Requireable<boolean>;
@@ -59,6 +67,8 @@ export default class Message<TMessage extends IMessage = IMessage> extends React
             right: PropTypes.Requireable<number | boolean | object>;
         }>>;
         shouldUpdateMessage: PropTypes.Requireable<(...args: any[]) => any>;
+        scrollToMessageId: PropTypes.Requireable<string>;
+        scrollToMessageRef:PropTypes.Requireable<any>;
     };
     shouldComponentUpdate(nextProps: MessageProps<TMessage>): boolean;
     renderDay(): {} | null | undefined;
